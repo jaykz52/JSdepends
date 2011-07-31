@@ -10,8 +10,8 @@ To leverage JSDepends,  reference the script in the <head></head> of your html a
 
 JSDepends' dependency tree is initially empty, but there's a few ways to build it up. You can:
 
-1. Extend the dependency tree yourself by adding something like the following below your depends.js declaration: 
-	
+1) Extend the dependency tree yourself by adding something like the following below your depends.js declaration: 
+
 	<script type="text/javascript">
 	depends.extend({
 		'random-script' : {'url' : 'url/for/randomscript.js', require: null},
@@ -21,11 +21,11 @@ JSDepends' dependency tree is initially empty, but there's a few ways to build i
 	});
 	</script>
 
-2. reference a publicly available dependency tree (TBA):
-	
+2) reference a publicly available dependency tree (TBA):
+
 	<script src="url/for/depends-tree.js" type="text/javascript"></script>
-	
-3. Both! When extending the dependency tree, new dependencies will simply be added; if there's a key collision (i.e. 2 'jquery' dependencies), the tree is updated from the last occurrence. This makes it easy to leverage an existing public repo, and still allowing you to customize it by updating urls, adding your own private files/frameworks, etc:
+
+3) Both! When extending the dependency tree, new dependencies will simply be added; if there's a key collision (i.e. 2 'jquery' dependencies), the tree is updated from the last occurrence. This makes it easy to leverage an existing public repo, and still allowing you to customize it by updating urls, adding your own private files/frameworks, etc:
 
 	<script src="url/for/depends-tree.js" type="text/javascript"></script>
 	<script>
@@ -34,16 +34,16 @@ JSDepends' dependency tree is initially empty, but there's a few ways to build i
 		'jquery' : {'url' : 'new/url/for/jquery.js'}
 	});
 	</script>
-	
+
 Once the dependency tree has been populated (hopefully using a publicly available one to save you time), you can actually tell depends which scripts you rely on:
-	
+
 	<script type="text/javascript">
 	depends.js(['some-local-file', 'coffeescript'], true, function() {
 		// do something once all the dependencies are loaded...
 		alert("Hello, world!");
 	});
 	</script>
-	
+
 The 1st arg is the array of dependencies (by key), followed by a boolean that tells JSDepends whether you want to pull down transitive dependencies along with your explicit ones. Lastly, you can declare a callback that will be called when all of your dependencies are loaded. Enjoy!
 
 # Get the source
