@@ -6,16 +6,7 @@
         allScriptsAppended = false;
 
 
-    if (!window.dependsRepo) {
-        window.dependsRepo = {
-            'jquery-paging' : { 'url' : 'http://localhost:11080/movement-request-validation-portlet/javascripts/jquery.paging.js', 'require' : ['jquery'] },
-            'jquery-metadata' : { 'url' : 'http://localhost:11080/movement-request-validation-portlet/javascripts/jquery.metadata.js', 'require' : ['jquery'] },
-            'sorting' : { 'url' : 'http://localhost:11080/movement-request-validation-portlet/javascripts/columnSorting.js', 'require' : ['jquery'] },
-            'jquery-portlet' : { 'url' : 'http://localhost:11080/movement-request-validation-portlet/javascripts/jquery.portlet-1.0.js', 'require' : ['jquery'] },
-            'jquery-tooltip' : { 'url' : 'http://localhost:11080/movement-request-validation-portlet/javascripts/jquery.wtooltip.js', 'require' : ['jquery'] },
-            'jquery' : { 'url' : 'jquery.js', 'require' : null }
-        };
-    }
+    if (!window.dependsRepo) { window.dependsRepo = {}; }
     var tree = window.dependsRepo;
 
     if (!window.depends) window.depends = {};
